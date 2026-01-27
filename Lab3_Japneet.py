@@ -164,16 +164,18 @@ radius = 100
 radius_increase = 10
 alex.clear()
 alex.speed(5)
-alex.pensize(5)
+alex.pensize("radius_increase")
 alex.up()
 for rainbow_color in rainbow_colors:
     alex.color("rainbow_color")
-    alex.goto(0, -radius)
+    alex.setheading(90)
+    alex.goto(-radius,0)
     alex.down()
     alex.circle(-radius,180)
-    alex.backward(radius_increase)
-    radius = radius + radius_increase 
     alex.up()
+
+    radius = radius + radius_increase
+    
 alex.shape("blank")
 
  
